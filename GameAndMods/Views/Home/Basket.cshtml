@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DobleBasket>
+@{ 
+    Layout = "_Layout";
+}
+<style>
+    /* Стили таблицы (IKSWEB) */
+    table.iksweb {
+        text-decoration: none;
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+    }
+
+        table.iksweb th {
+            font-weight: normal;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #343a40;
+        }
+
+        table.iksweb td {
+            font-size: 17px;
+            color: #969696;
+        }
+
+        table.iksweb td, table.iksweb th {
+            white-space: pre-wrap;
+            padding: 10px 5px;
+            line-height: 17px;
+            vertical-align: middle;
+            border: 1px solid #354251;
+        }
+
+        table.iksweb tr:hover {
+            background-color: #343a40
+        }
+
+            table.iksweb tr:hover td {
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+    .mobile-table {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+</style>
+<div class="container">
+
+    <div class="mobile-table">
+        @if (Model == null)
+        {
+            <a>Корзина пуста!</a>
+        }
+        else
+        {
+            
+                    <table class="iksweb">
+                        <thead>
+                            <tr>
+                               
+                                <th>Название игры</th>
+                                <th>Покупка</th>
+                                <th>Удаление из корзины</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Record in Model)
+                            {
+
+                                    <tr>
+                                        
+                                        <td>@Record.Name_Game</td>
+                                        <td><a href="~/Home/Buy?ID=@Record.Game_ID" class="btn btn-primary">Купить</a></td>
+                                        <td><a href="~/Home/Remove?ID=@Record.ID_Record" class="btn btn-primary">Удаление</a></td>
+                                    </tr>
+
+                            }
+                        </tbody>
+                    </table>
+            }}
+        </div>
+</div>
+

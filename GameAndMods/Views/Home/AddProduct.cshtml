@@ -1,0 +1,54 @@
+﻿@model GameAndMods.Models.Game;
+
+@{
+    ViewBag.Title = "Добавление товара";
+}
+<body style="background-color:#31373e; height: 100%; background-repeat: no-repeat;">
+
+    <div class="h-80 container">
+        <div class="row align-items-center h-100">
+            <div class="mx-auto">
+                <form asp-action="AddProduct" asp-controller="Home" asp-antiforgery="true" method="post" enctype="multipart/form-data">
+                    <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                    <div class="card text-center" style="background-color:#454853">
+                        <div class="card-header">
+                            <a class="display-4">
+                                <img class="img-fluid" src="~/images/logo1.png" alt="..." style="max-height:500px">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <label class="text-light" asp-for="Title">Названеи игры</label>
+                                <input asp-for="Title" />
+                                <span asp-validation-for="Title" />
+
+                            </p>
+                            <p>
+                                <label class="text-light" asp-for="Description">Описание</label>
+                                <input asp-for="Description" />
+                                <span asp-validation-for="Description"></span>
+
+                            </p>
+                            <p>
+                                <label class="text-light" asp-for="Img1">Вставте ссылку на картинку</label>
+                                <input asp-for="Img1" />
+                                <span asp-validation-for="Img1"></span>
+
+                            </p>
+                            <p>
+                                <label class="text-light" asp-for="Categori_ID">Напишите код категории</label>
+                                <input asp-for="Categori_ID" />
+                                <span asp-validation-for="Categori_ID"></span>
+
+                            </p>
+                            <p>
+                                <input class="text-light bg-danger" type="submit" value="Добавить" />
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

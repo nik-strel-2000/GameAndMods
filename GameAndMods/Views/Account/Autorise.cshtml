@@ -1,0 +1,35 @@
+﻿@model GameAndMods.Models.Users
+@{Layout = null;}
+<link rel="stylesheet" href="~/lib/bootsrap 4.6/bootstrap.min.css" />
+
+<body style="background-color:#31373e; height: 100%; background-repeat: no-repeat;" >
+    
+    <div class="h-80 container" >
+        <div class="row align-items-center h-100">
+            <div class="mx-auto">
+                <form class="ufive-input " asp-antiforgery="true" asp-controller="Account" asp-action="Autorise">
+                   <div class="validation" asp-validation-summary="ModelOnly"></div>
+                
+                    <div class="card text-center"  style="background-color:#454853">
+                        <div class="card-header">
+                            <a class="display-4">
+                                <img class="img-fluid" src="~/images/logo1.png" alt="..." style="max-height:500px">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p />
+                            <input type="email" asp-for="Email" placeholder="Введите Email">
+                            <p />
+                            <input asp-for="Password" type="password" placeholder="Введите пароль">
+                            <p />
+                            <button type="submit">Войти</button>
+                            <p />
+                            <a class="text-light" type="submit" href="~/Home/MainMEnu">На главную</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
